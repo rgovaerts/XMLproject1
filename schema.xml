@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 
-<xs:schema>
+<xs:schema xmlns:xs=""
+targetNamespace=""
+xmlns=""
+elementFormDefault="qualified">
+
+<complexType name="DepartementType">
+	<sequence>
+		<element name ="scientific products" type="">
+		<element name ="leisure products" type="">
+	</sequence>
+</complexType>
 
 </xs:schema> 
