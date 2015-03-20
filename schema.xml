@@ -1,31 +1,33 @@
 <?xml version="1.0"?>
 
-<xs:schema xmlns:xs=""
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 targetNamespace=""
-xmlns=""
+xmlns="http://www.w3.org/2001/XMLSchema"
 elementFormDefault="qualified">
 
 	<xs:complexType name="DepartementType">
 		<xs:complexType name ="scientific_product">
 			<xs:complexType name="scientific_book">
 				<xs:sequence>
-					<xs:complexType name="Title" use=“required”>
+					<xs:complexType name="Title" use="required">
 						<!-- title = list of strings, this allows to use spaces-->
 						<xs:list itemType="xs:string"/>
 					</xs:complexType>
-					<xs:complexType name="Authors" use=“required”>
-						<!-- list of authors-->
-						<xs:list itemType="xs:string"/>
-					</xs:complexType>
-					<xs:complexType name="Editors" use=“required”>
-						<!-- list of editors-->
-						<xs:list itemType="xs:string"/>
-					</xs:complexType>
-					<xs:complexType name="Publishers" use=“required”>
+					<xs:choice>
+						<xs:complexType name="Authors" use="required">
+							<!-- list of authors-->
+							<xs:list itemType="xs:string"/>
+						</xs:complexType>
+						<xs:complexType name="Editors" use="required">
+							<!-- list of editors-->
+							<xs:list itemType="xs:string"/>
+						</xs:complexType>
+					</xs:choice>
+					<xs:complexType name="Publishers" use="required">
 						<!-- list of publishers-->
 						<xs:list itemType="xs:string"/>
 					</xs:complexType>
-					<xs:element name=“Publication_year” type=“xs:gYear” use=“required”/>
+					<xs:element name="Publication_year" type="xs:gYear" use="required"/>
 					<xs:complexType name="Abstract"/>
 						<xs:list itemType="xs:string"/>
 					</xs:complexType>
@@ -39,28 +41,28 @@ elementFormDefault="qualified">
 						<!-- title = list of strings, this allows to use spaces-->
 						<xs:list itemType="xs:string"/>
 					</xs:complexType>
-					<xs:element name="Volume" type="xs:int" use=“required”/>
-					<xs:element name="Number" type="xs:int" use=“required”/>
+					<xs:element name="Volume" type="xs:int" use="required"/>
+					<xs:element name="Number" type="xs:int" use="required"/>
 					<xs:choice>
 						<!-- list of authors or editors but not both-->
-						<xs:complexType name="Authors" use=“required”>
+						<xs:complexType name="Authors" use="required">
 							<!-- list of authors-->
 							<xs:list itemType="xs:string"/>
 						</xs:complexType>
-						<xs:complexType name="Editors" use=“required”>
+						<xs:complexType name="Editors" use="required">
 							<!-- list of editors-->
 							<xs:list itemType="xs:string"/>
 						</xs:complexType>
 					</xs:choice>
-					<xs:element name=“Publication_year” type=“xs:gYear” use=“required”/>
+					<xs:element name="Publication_year" type="xs:gYear" use="required"/>
 					<xs:complexType name="Publishers" use=“optional”>
 						<!-- list of publishers-->
 						<xs:list itemType="xs:string"/>
 					</xs:complexType>
-					<xs:element name="Impact" type="xs:string" use=“optional”/>
+					<xs:element name="Impact" type="xs:string" use="optional"/>
 						<!-- Add year of impact if impact present -->
 						
-					<xs:complexType name="Table_of_contents" use=“required”>
+					<xs:complexType name="Table_of_contents" use="required">
 						<xs:list itemType=""/>
 						<!-- must still create an itemType xs:journal with title,
 list of authors, and start page, end page -->
@@ -70,7 +72,13 @@ list of authors, and start page, end page -->
 		</xs:complexType>
 		<xs:complexType name="leisure_product">
 			<xs:complexType name="leisure_book">
-				<!-- TO DO -->
+				<xs:sequence>
+					<xs:complexType name="Title" use="required">
+						<xs:list itemType="xs:string"/>
+					</xs:complexType>
+					<element name="Author" type="string" minOccurs="0" maxOccurs="unbounded" use="required">
+					
+				</xs:sequence>
 			</xs:complexType>
 			<xs:complexType name="leisure_periodical">
 				<!-- TO DO -->
