@@ -6,29 +6,37 @@ xmlns=""
 elementFormDefault="qualified">
 
 <xs:complexType name="DepartementType">
-	<xs:sequence>
-		<xs:element name ="scientific products" type="">
-			<xs:complexType>
-				<xs:sequence>
-					<xs:complexType name="Authors">
-						<xs:sequence>
-							<xs:element name=""/>
-							<!-- list of authors-->
-						</xs:sequence>
-					<xs:complexType name="Editors">
-						<xs:sequence>
-							<xs:element name=""/>
-							<!-- list of editors-->
-						</xs:sequence>
-					<xs:complexType name="Publishers">
-						<xs:sequence>
-							<xs:element name=""/>
-							<!-- list of publishers-->
-						</xs:sequence>
-					<xs:element name=“Year of publication” type=“xs:gYear” />
-				</xs:sequence>
-		<xs:element name ="leisure products" type="">
-	</xs:sequence>
+	<xs:complexType name ="scientific_product">
+		<xs:complexType name="scientific_book">
+			<xs:sequence>
+				<xs:complexType name="Authors" use=“required”>
+					<!-- list of authors-->
+					<xs:list itemType="xs:string"/>
+				<xs:complexType name="Editors" use=“required”>
+					<!-- list of editors-->
+					<xs:list itemType="xs:string"/>
+				<xs:complexType name="Publishers" use=“required”>
+					<!-- list of publishers-->
+					<xs:list itemType="xs:string"/>
+				<xs:element name=“Year of publication” type=“xs:gYear” use=“required”/>
+				<xs:complexType name="Abstract"/>
+					<xs:list itemType="xs:string"/>
+				<xs:element name="Edition" type="xs:int"/>
+				<xs:element name="ISBN" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="scientific_journal">
+			<!-- TO DO -->
+		</xs:complexType>
+	</xs:complexType>
+	<xs:complexType name="leisure_product">
+		<xs:complexType name="leisure_book">
+			<!-- TO DO -->
+		</xs:complexType>
+		<xs:complexType name="leisure_periodical">
+			<!-- TO DO -->
+		</xs:complexType>
+	</xs:complexType>
 </xs:complexType>
 
 </xs:schema> 
