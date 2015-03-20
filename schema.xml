@@ -5,11 +5,30 @@ targetNamespace=""
 xmlns=""
 elementFormDefault="qualified">
 
-<complexType name="DepartementType">
-	<sequence>
-		<element name ="scientific products" type="">
-		<element name ="leisure products" type="">
-	</sequence>
-</complexType>
+<xs:complexType name="DepartementType">
+	<xs:sequence>
+		<xs:element name ="scientific products" type="">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:complexType name="Authors">
+						<xs:sequence>
+							<xs:element name=""/>
+							<!-- list of authors-->
+						</xs:sequence>
+					<xs:complexType name="Editors">
+						<xs:sequence>
+							<xs:element name=""/>
+							<!-- list of editors-->
+						</xs:sequence>
+					<xs:complexType name="Publishers">
+						<xs:sequence>
+							<xs:element name=""/>
+							<!-- list of publishers-->
+						</xs:sequence>
+					<xs:element name=“Year of publication” type=“xs:gYear” />
+				</xs:sequence>
+		<xs:element name ="leisure products" type="">
+	</xs:sequence>
+</xs:complexType>
 
 </xs:schema> 
