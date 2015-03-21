@@ -11,7 +11,7 @@ elementFormDefault="qualified">
 				<xs:sequence>
 					<xs:complexType name="Title" use="required">
 						<!-- title = list of strings, this allows to use spaces-->
-						<xs:list itemType="xs:string"/>
+						<xs:list itemType="xs:string"/> 
 					</xs:complexType>
 					<xs:choice>
 						<xs:complexType name="Authors" use="required">
@@ -73,11 +73,9 @@ list of authors, and start page, end page -->
 		<xs:complexType name="leisure_product">
 			<xs:complexType name="leisure_book">
 				<xs:sequence>
-					<xs:complexType name="Title" use="required">
-						<xs:list itemType="xs:string"/>
-					</xs:complexType>
-					<element name="Author" type="string" minOccurs="0" maxOccurs="unbounded" use="required">
-					
+					<element name="Title" use="required"/>
+					<element name="Author" type="string" minOccurs="0" maxOccurs="unbounded" use="required"/>
+					<element name="Publisher" use="required"/>
 				</xs:sequence>
 			</xs:complexType>
 			<xs:complexType name="leisure_periodical">
