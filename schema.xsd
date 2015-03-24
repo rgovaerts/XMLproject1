@@ -17,7 +17,6 @@ elementFormDefault="qualified">
 					</xs:choice>
 					<xs:element name="publisher" type="xs:string" use="required"/>
 					<xs:element name="publication_year" type="xs:gYear" use="required"/>
-					<xs:element name="publisher" type="xs:string" use="required"/>
 					<xs:element name="abstract"/>
 					<xs:element name="edition" type="xs:date"/>
 					<xs:element name="isbn" type="xs:string"/>
