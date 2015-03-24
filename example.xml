@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Department_type>
+  <scientific_poduct>
+    <scientific_book>
+      <title>Dynamic Light Scattering: With Applications to Chemistry, Biology, and Physics</title>
+      <author>Bruce J. Berne</author>
+      <author>Robert Pecora</author>
+      <publisher>John Wiley & Sons</publisher>
+      <publication_year>1976</publication_year>
+      <isbn>0-486-41155-9</isbn>
+    </scientific_book>
+  </scientific_poduct>
+</Department_type>
