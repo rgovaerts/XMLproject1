@@ -5,93 +5,113 @@ targetNamespace="http://www.example.org/bookstoreExample"
 xmlns="http://www.w3.org/2001/XMLSchema"
 elementFormDefault="qualified">
 
-	<xs:element name="bookstore" type="departements"/>
-
-	<xs:complexType name="departements">
+	<xs:element name="bookstore">
+	<xs:complexType>
 		<xs:sequence>
-			<xs:complexType name ="scientific_product">
-				<xs:complexType name="scientific_book">
+			<xs:element name ="scientific_products">
+				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="title" type="xs:string" use="required"/>
-						<xs:choice>
-							<!-- list of authors or editors but not both-->						
-							<xs:element name="author" type="xs:string" use="required"/>
-							<xs:element name="editor" type="xs:string" use="required"/>
-						</xs:choice>
-						<xs:element name="publisher" type="xs:string" use="required"/>
-						<xs:element name="publication_year" type="xs:gYear" use="required"/>
-						<xs:element name="abstract"/>
-						<xs:element name="edition" type="xs:date"/>
-						<xs:element name="isbn" type="xs:string"/>
-					</xs:sequence>
-				</xs:complexType>
-				<xs:complexType name="scientific_journal">
-					<sequence>
-						<xs:element name="title" type="xs:string" use="required"/>
-						<xs:element name="volume" type="xs:int" use="required"/>
-						<xs:element name="number" type="xs:int" use="required"/>
-						<xs:choice>
-							<!-- list of authors or editors but not both-->						
-							<xs:element name="author" type="xs:string" use="required"/>
-							<xs:element name="editor" type="xs:string" use="required"/>
-						</xs:choice>
-						<xs:element name="publication_year" type="xs:gYear" use="required"/>
-						<xs:element name="publishers" type="xs:string" use="optional"/>
-						<xs:element name="impact" type="xs:string" use="optional"/>
-							<!-- Add year of impact if impact present -->	
-						<xs:complexType name="table_of_contents" use="required">
-							<xs:sequence>
-								<xs:element name="article" use="required"/>
-									<xs:sequence>						
-										<xs:element name="title" type="xs:string" use="required"/>
-										<xs:element name="author" type="xs:string" use="required"/>
-										<xs:choice>
-											<xs:complexType name="start_and_end_page" use="required"/>
-												<xs:sequence>
-													<xs:element name="start_page" type="xs:int" use="required"/>
-													<xs:element name="end_page" type="xs:int" use="required"/>
-												</xs:sequence>	
-											<xs:complexType name="article_number" type="xs:int" use="required"/>
-										</xs:choice>
-										<xs:element name="start_page" type="xs:int" use="required"/>
-										<xs:element name="end_page" type="xs:int" use="required"/>
-									</xs:sequence>
-							</xs:sequence>
-						</xs:complexType>
-					</sequence>
-				</xs:complexType>
-			</xs:complexType>
-			<xs:complexType name="leisure_product">
-				<xs:complexType name="leisure_book">
-					<xs:sequence>
-						<xs:element name="title" use="required"/>
-						<xs:element name="author" type="string" minOccurs="1" maxOccurs="unbounded" use="required"/>
-						<xs:element name="publisher" use="required"/>
-						<xs:element name="publication_year" type="xs:gYear" use="required"/>
-						<xs:element name="genre" use="required">
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="thriller"/>
-							    	<xs:enumeration value="horror"/>
-							      	<xs:enumeration value="sci/fi"/>
-							      	<xs:enumeration value="romance"/>
-							    	<xs:enumeration value="literature"/>
-								</xs:restriction>
-							</xs:simpleType>
+						<xs:element name="book" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="title" type="xs:string"/>
+									<xs:choice>
+										<!-- list of authors or editors but not both-->						
+										<xs:element name="author" type="xs:string"/>
+										<xs:element name="editor" type="xs:string"/>
+									</xs:choice>
+									<xs:element name="publisher" type="xs:string"/>
+									<xs:element name="publication_year" type="xs:gYear"/>
+									<xs:element name="abstract" minOccurs="0" maxOccurs="1"/>
+									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
+									<xs:element name="isbn" type="xs:string" minOccurs="0" maxOccurs="1"/>
+								</xs:sequence>
+								<xs:attribute name="scientific_product" type="xs:string" use="required"/>
+							</xs:complexType>
 						</xs:element>
-						<xs:element name="edition" type="xs:date" use="optional"/>
-						<xs:element name="pages_number" type="xs:int" use="optional"/>
+						<xs:element name="journal" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<sequence>
+									<xs:element name="title" type="xs:string"/>
+									<xs:element name="volume" type="xs:int"/>
+									<xs:element name="number" type="xs:int"/>
+									<xs:choice>
+										<!-- list of authors or editors but not both-->						
+										<xs:element name="author" type="xs:string"/>
+										<xs:element name="editor" type="xs:string"/>
+									</xs:choice>
+									<xs:element name="publication_year" type="xs:gYear"/>
+									<xs:element name="publishers" type="xs:string" minOccurs="0" maxOccurs="1"/>
+									<xs:element name="impact" type="xs:string" minOccurs="0" maxOccurs="1"/>
+										<!-- Add year of impact if impact present -->	
+									<xs:element name="table_of_contents">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="article"/>
+												<xs:sequence>						
+													<xs:element name="title" type="xs:string"/>
+													<xs:element name="author" type="xs:string"/>
+													<xs:choice>
+														<xs:complexType name="start_and_end_page"/>
+															<xs:sequence>
+																<xs:element name="start_page" type="xs:int"/>
+																<xs:element name="end_page" type="xs:int"/>
+															</xs:sequence>	
+														<xs:complexType name="article_number" type="xs:int"/>
+													</xs:choice>
+													<xs:element name="start_page" type="xs:int"/>
+													<xs:element name="end_page" type="xs:int"/>
+												</xs:sequence>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</sequence>
+								<xs:attribute name="scientific_product" type="xs:string"/>
+							</xs:complexType>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
-				<xs:complexType name="leisure_periodical">
-					<xs:sequence>
-						<xs:element name="title" type="xs:string" use="required"/>
-						<xs:element name="price" type="xs:float" use="required"/>
-						<xs:element name="publisher" type="xs:string" use="required"/>
-					</xs:sequence>
+			</xs:element>
+			<xs:element  name="leisure_product">
+				<xs:complexType>
+					<xs:element name="book" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="title"/>
+								<xs:element name="author" type="string" minOccurs="1" maxOccurs="unbounded"/>
+								<xs:element name="publisher"/>
+								<xs:element name="publication_year" type="xs:gYear"/>
+								<xs:element name="genre">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="thriller"/>
+											<xs:enumeration value="horror"/>
+											<xs:enumeration value="sci/fi"/>
+											<xs:enumeration value="romance"/>
+											<xs:enumeration value="literature"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
+								<xs:element name="pages_number" type="xs:int" minOccurs="0" maxOccurs="1"/>
+							</xs:sequence>
+							<xs:attribute name="leisure_product" type="xs:string" minOccurs="0" maxOccurs="1"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="periodical" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="title" type="xs:string"/>
+								<xs:element name="price" type="xs:float"/>
+								<xs:element name="publisher" type="xs:string"/>
+							</xs:sequence>
+							<xs:attribute name="leisure_product" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
 				</xs:complexType>
-			</xs:complexType>
-		</xs:complexType>
-	</xs:sequence>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
 
 </xs:schema> 
