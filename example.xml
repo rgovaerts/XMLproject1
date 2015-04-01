@@ -8,7 +8,7 @@
       <publisher>John Wiley &amp; Sons</publisher>
       <publication_year>1976</publication_year>
       <isbn>0-486-41155-9</isbn>
-    </scientific_book>
+    </book>
   </scientific_poducts>
   <leisure_products>
 	<book genre="leisure_book">
@@ -17,6 +17,6 @@
 	   <publisher>John Wiley</publisher>
 	   <publication_year>2003</publication_year>
 	   <genre>horror</genre>
-	</leisure_book>
+	</book>
   </leisure_products>
 </bookstore>
