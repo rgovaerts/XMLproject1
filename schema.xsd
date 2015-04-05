@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="http://www.example.org/bookstoreExample"
-xmlns="http://www.w3.org/2001/XMLSchema"
-elementFormDefault="qualified">
+xmlns="http://www.w3.org/2001/XMLSchema">
 
 	<xs:element name="bookstore">
 	<xs:complexType>
@@ -17,8 +15,8 @@ elementFormDefault="qualified">
 									<xs:element name="title" type="xs:string"/>
 									<xs:choice>
 										<!-- list of authors or editors but not both-->						
-										<xs:element name="author" type="xs:string"/>
-										<xs:element name="editor" type="xs:string"/>
+										<xs:element name="author" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+										<xs:element name="editor" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
 									</xs:choice>
 									<xs:element name="publisher" type="xs:string"/>
 									<xs:element name="publication_year" type="xs:gYear"/>
@@ -26,7 +24,7 @@ elementFormDefault="qualified">
 									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="isbn" type="xs:string" minOccurs="0" maxOccurs="1"/>
 								</xs:sequence>
-								<xs:attribute name="scientific_product" type="xs:string" use="required"/>
+								<xs:attribute name="genre" type="xs:string" use="required"/>
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="journal" minOccurs="0" maxOccurs="unbounded">
@@ -75,7 +73,7 @@ elementFormDefault="qualified">
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element  name="leisure_product">
+			<xs:element  name="leisure_products">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="book" minOccurs="0" maxOccurs="unbounded">
@@ -99,7 +97,7 @@ elementFormDefault="qualified">
 									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="pages_number" type="xs:int" minOccurs="0" maxOccurs="1"/>
 								</xs:sequence>
-								<xs:attribute name="leisure_product" type="xs:string" use="required"/>
+								<xs:attribute name="genre" type="xs:string" use="required"/>
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="periodical" minOccurs="0" maxOccurs="unbounded">
