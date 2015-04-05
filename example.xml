@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <bookstore>
-  <scientific_poducts>
-    <book genre="scientific_book">
+  <scientific_products>
+    <book genre="scientific_product">
       <title>Dynamic Light Scattering: With Applications to Chemistry, Biology, and Physics</title>
       <author>Bruce J. Berne</author>
       <author>Robert Pecora</author>
@@ -9,9 +10,9 @@
       <publication_year>1976</publication_year>
       <isbn>0-486-41155-9</isbn>
     </book>
-  </scientific_poducts>
+  </scientific_products>
   <leisure_products>
-	<book genre="leisure_book">
+	<book genre="leisure_product">
 		<title>BlaBlaBla</title>
 		<author>Philp Lo</author>
 	   <publisher>John Wiley</publisher>
