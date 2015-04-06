@@ -35,39 +35,41 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 									<xs:element name="number" type="xs:int"/>
 									<xs:choice>
 										<!-- list of authors or editors but not both-->						
-										<xs:element name="author" type="xs:string"/>
-										<xs:element name="editor" type="xs:string"/>
+										<xs:element name="author" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+										<xs:element name="editor" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
 									</xs:choice>
 									<xs:element name="publication_year" type="xs:gYear"/>
 									<xs:element name="publishers" type="xs:string" minOccurs="0" maxOccurs="1"/>
-									<xs:element name="impact" type="xs:string" minOccurs="0" maxOccurs="1"/>
-										<!-- Add year of impact if impact present -->	
+									<xs:element name="impact" minOccurs="0" maxOccurs="1">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="impact_value" type="xs:float"/>
+												<xs:element name="validation_year" type="xs:gYear"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element name="table_of_contents">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="article"/>
-												<xs:sequence>						
-													<xs:element name="title" type="xs:string"/>
-													<xs:element name="author" type="xs:string"/>
-													<xs:choice>
-														<xs:element name="start_and_end_page">
-															<xs:complexType>
-																<xs:sequence>
-																	<xs:element name="start_page" type="xs:int"/>
-																	<xs:element name="end_page" type="xs:int"/>
-																</xs:sequence>
-															</xs:complexType>
-														</xs:element>
-														<xs:element name="article_number" type="xs:int"/>
-													</xs:choice>
-													<xs:element name="start_page" type="xs:int"/>
-													<xs:element name="end_page" type="xs:int"/>
-												</xs:sequence>
+												<xs:element name="article" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>						
+															<xs:element name="title" type="xs:string"/>
+															<xs:element name="author" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+															<xs:choice>
+																		<xs:sequence>
+																			<xs:element name="start_page" type="xs:int"/>
+																			<xs:element name="end_page" type="xs:int"/>
+																		</xs:sequence>
+																<xs:element name="article_number" type="xs:int"/>
+															</xs:choice>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
 								</sequence>
-								<xs:attribute name="scientific_product" type="xs:string"/>
 							</xs:complexType>
 						</xs:element>
 					</xs:sequence>
@@ -107,7 +109,6 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 									<xs:element name="price" type="xs:float"/>
 									<xs:element name="publisher" type="xs:string"/>
 								</xs:sequence>
-								<xs:attribute name="leisure_product" type="xs:string"/>
 							</xs:complexType>
 						</xs:element>
 					</xs:sequence>
