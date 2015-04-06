@@ -10,6 +10,40 @@
       <publication_year>1976</publication_year>
       <isbn>0-486-41155-9</isbn>
     </book>
+	 <book genre="scientific_product">
+	  <title>xxx</title>
+	  <author>fff</author>
+	  <publisher>John Wiley &amp; Sons</publisher>
+	  <publication_year>1986</publication_year>
+	  <isbn>0-486-41345-7</isbn>
+	</book>
+	<journal>
+		<title>A</title>
+		<volume>2</volume>
+		<number>123</number>
+		<editor>Alex Bill</editor>
+	  	<editor>Fill Max</editor>
+		<publication_year>2011</publication_year>
+		<impact>
+			<impact_value>0.8</impact_value>
+			<validation_year>2012</validation_year>
+		</impact>
+		<table_of_contents>
+			<article>
+				<title>A Article</title>
+				<author>Jean Paul</author>
+				<author>Maurice Pax</author>
+				<start_page>2</start_page>
+				<end_page>5</end_page>
+			</article>
+			<article>
+				<title>A Other Article</title>
+				<author>Pascal Mo</author>
+				<start_page>6</start_page>
+				<end_page>10</end_page>
+			</article>
+		</table_of_contents>
+	 </journal>
   </scientific_products>
   <leisure_products>
 	<book genre="leisure_product">
