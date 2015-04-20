@@ -2,7 +2,7 @@
 
 <bookstore>
   <scientific_products>
-    <book genre="scientific_product">
+    <book>
       <title>Dynamic Light Scattering: With Applications to Chemistry, Biology, and Physics</title>
       <author>Bruce J. Berne</author>
       <author>Robert Pecora</author>
@@ -10,48 +10,52 @@
       <publication_year>1976</publication_year>
       <isbn>0-486-41155-9</isbn>
     </book>
-	 <book genre="scientific_product">
-	  <title>xxx</title>
-	  <author>fff</author>
-	  <publisher>John Wiley &amp; Sons</publisher>
-	  <publication_year>1986</publication_year>
-	  <isbn>0-486-41345-7</isbn>
+	<book>
+	  <title>Marine Conservation Biology: The Science of Maintaining the Sea's Biodiversity</title>
+	  <author>Michael E. Soulé</author>
+	  <publisher>Island Press</publisher>
+	  <publication_year>2005</publication_year>
+	  <isbn>1597267716, 9781597267717</isbn>
 	</book>
 	<journal>
-		<title>A</title>
-		<volume>2</volume>
-		<number>123</number>
-		<editor>Alex Bill</editor>
-	  	<editor>Fill Max</editor>
-		<publication_year>2011</publication_year>
+		<title>Journal of Nonlinear Mathematical Physics</title>
+		<volume>14</volume>
+		<number>1</number>
+	  	<editor>Atlantis Press</editor>
+		<publication_year>2007</publication_year>
 		<impact>
 			<impact_value>0.8</impact_value>
 			<validation_year>2012</validation_year>
 		</impact>
 		<table_of_contents>
 			<article>
-				<title>A Article</title>
-				<author>Jean Paul</author>
-				<author>Maurice Pax</author>
-				<start_page>2</start_page>
-				<end_page>5</end_page>
+				<title>An invariant p-adic q-integeral associated with q-Euler numbers and polynomials</title>
+				<author>I. N. Cangûl</author>
+				<author>V. Kurt</author>
+				<start_page>8</start_page>
+				<end_page>12</end_page>
 			</article>
 			<article>
-				<title>A Other Article</title>
-				<author>Pascal Mo</author>
-				<start_page>6</start_page>
-				<end_page>10</end_page>
+				<title>q-Euler numbers and polynomials associated with p-adic q-integrals</title>
+				<author>T. Kim</author>
+				<article_number>2</article_number>
 			</article>
 		</table_of_contents>
 	 </journal>
   </scientific_products>
   <leisure_products>
-	<book genre="leisure_product">
-		<title>BlaBlaBla</title>
-		<author>Philp Lo</author>
-	   <publisher>John Wiley</publisher>
-	   <publication_year>2003</publication_year>
-	   <genre>horror</genre>
+	<book>
+		<title>Alice's Adventures in Wonderland</title>
+		<author>Lewis Carroll</author>
+	   	<publisher>Lee and Shepard</publisher>
+	   	<publication_year>1920</publication_year>
+	   	<genre>literature</genre>
+	   	<pages_number>192</pages_number>
 	</book>
+	<periodical>
+		<title>The Pickwick Papers</title>
+		<price>4</price>
+		<publisher>Amalgamated Press Limited</publisher>
+	</periodical>
   </leisure_products>
 </bookstore>
