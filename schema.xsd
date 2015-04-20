@@ -24,7 +24,6 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="isbn" type="xs:string" minOccurs="0" maxOccurs="1"/>
 								</xs:sequence>
-								
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="journal" minOccurs="0" maxOccurs="unbounded">
@@ -99,7 +98,6 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="pages_number" type="xs:int" minOccurs="0" maxOccurs="1"/>
 								</xs:sequence>
-								
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="periodical" minOccurs="0" maxOccurs="unbounded">
