@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore>
+	<scientific_products>
+	</scientific_products>
+	<leisure_products>
+		<book>
+			<title>Alice's Adventures in Wonderland</title>
+			<author>Lewis Carroll</author>
+		   	<publisher>Lee and Shepard</publisher>
+		   	<publication_year>1920</publication_year>
+		   	<genre>literature</genre>
+		   	<pages_number>192</pages_number>
+		</book>
+		<periodical>
+			<title>The Pickwick Papers</title>
+			<price>4</price>
+			<publisher>Amalgamated Press Limited</publisher>
+		</periodical>
+	</leisure_products>
+</bookstore>

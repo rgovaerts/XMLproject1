@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore>
+  <scientific_products>
+    <book>
+      <title>Dynamic Light Scattering: With Applications to Chemistry, Biology, and Physics</title>
+      <author>Bruce J. Berne</author>
+      <author>Robert Pecora</author>
+      <publisher>John Wiley &amp; Sons</publisher>
+      <publication_year>1976</publication_year>
+      <isbn>0-486-41155-9</isbn>
+    </book>
+	<book>
+	  <title>Marine Conservation Biology: The Science of Maintaining the Sea's Biodiversity</title>
+	  <author>Michael E. Soulé</author>
+	  <publisher>Island Press</publisher>
+	  <publication_year>2005</publication_year>
+	  <isbn>1597267716, 9781597267717</isbn>
+	</book>
+  </scientific_products>
+  <leisure_products>
+	<book>
+		<title>Alice's Adventures in Wonderland</title>
+		<author>Lewis Carroll</author>
+	   	<publisher>Lee and Shepard</publisher>
+	   	<publication_year>1920</publication_year>
+	   	<genre>literature</genre>
+	   	<pages_number>192</pages_number>
+	</book>
+	<book>
+		<title>Pompeii in the Public Imagination from Its Rediscovery to Today</title>
+		<author>Shelley Hales</author>
+		<author>Joanna Paul</author>
+	   	<publisher>Oxford University Press</publisher>
+	   	<publication_year>2011</publication_year>
+	   	<genre>literature</genre>
+	   	<pages_number>417</pages_number>
+	</book>
+	<periodical>
+		<title>The Pickwick Papers</title>
+		<price>4.0</price>
+		<publisher>Amalgamated Press Limited</publisher>
+	</periodical>
+  </leisure_products>
+</bookstore>

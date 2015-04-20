@@ -20,7 +20,7 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 									</xs:choice>
 									<xs:element name="publisher" type="xs:string"/>
 									<xs:element name="publication_year" type="xs:gYear"/>
-									<xs:element name="abstract" minOccurs="0" maxOccurs="1"/>
+									<xs:element name="abstract" type="xs:string" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="edition" type="xs:date" minOccurs="0" maxOccurs="1"/>
 									<xs:element name="isbn" type="xs:string" minOccurs="0" maxOccurs="1"/>
 								</xs:sequence>
@@ -80,9 +80,9 @@ xmlns="http://www.w3.org/2001/XMLSchema">
 						<xs:element name="book" minOccurs="0" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="title"/>
+									<xs:element name="title" type="string"/>
 									<xs:element name="author" type="string" minOccurs="1" maxOccurs="unbounded"/>
-									<xs:element name="publisher"/>
+									<xs:element name="publisher" type="string"/>
 									<xs:element name="publication_year" type="xs:gYear"/>
 									<xs:element name="genre">
 										<xs:simpleType>
